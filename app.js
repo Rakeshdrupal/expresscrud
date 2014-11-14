@@ -8,8 +8,10 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 
+
 //load customers route
 var customers = require('./routes/customers'); 
+var users = require('./routes/users'); 
 
 var app = module.exports = express.createServer();
 
@@ -65,8 +67,9 @@ app.post('/customers/add',customers.save);
 app.get('/customers/delete/:id',customers.delete_customer);
 app.get('/customers/edit/:id',customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
+app.get('/users/signup',users.signup);
 
-app.get('/awesome',function(req,res))
+
 
 
 app.listen(3000, function(){
